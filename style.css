@@ -11,17 +11,24 @@ button {
 }
 
 input {
-    /* width: 300px; */
+    flex: 1 1 auto;
     height: 50px;
-    margin-bottom: 2rem;
-    align-self: space-around;
+    background-color: rgb(202, 153, 46);
+    text-align: end;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex: 1 1 auto;
-    /* gap: 1rem; */
+}
+
+.operator {
+    background-color: darkslategray;
+}
+
+.clear {
+    background-color: rgb(220, 20, 20);
 }
 
 .container {
@@ -32,4 +39,24 @@ input {
     height: 600px;
     border: 1px solid black;
     justify-items: flex-start;
+    background-color: rgb(19, 18, 18);
+    padding: .5rem;
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+}
+
+.output {
+    font-size: x-large;
+    /* min-height: 1em; */
+    height: 1em;
+    flex: 0 0 auto;
+    margin: 0%;
+    padding: 0%;
+    color: blanchedalmond;
 }
