@@ -1,14 +1,12 @@
 const digitButtons = document.querySelectorAll(".digit");
 const operatorButtons = document.querySelectorAll(".operator");
-const equalsButton = document.querySelector('.equals')
+const equalsButton = document.querySelector('.equals');
+const clearButton = document.querySelector('.clear');
 
 const screen = document.getElementById("screen");
+const output = document.querySelector(".output");
 
-console.log(digitButtons);
 let firstNumber ;
-let secondNumber ;
-// let firstNumberIsLocked = false;
-// let secondNumberIsLocked = false;
 let oper = "";
 let enterSecondNumber = false;
 
@@ -31,12 +29,19 @@ function calculate(a, b, operator ) {
     }
 }
 
+clearButton.addEventListener("click", () => {
+    firstNumber = "";
+    oper = "";
+    screen.value = "";
+    output.textContent = "";
+})
+
 equalsButton.addEventListener("click", () => {
-    console.log("=");
     if (firstNumber && oper){
         firstNumber = calculate(parseInt(firstNumber), parseInt(screen.value), oper);
         screen.value = firstNumber;
         oper = "";
+        output.textContent = firstNumber;
     }
 })
 
@@ -54,12 +59,12 @@ operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if (oper){
             firstNumber = calculate(parseInt(firstNumber), parseInt(screen.value), oper)
-            console.log(firstNumber)
-            screen.value = firstNumber;
+            screen.value = "";
+            oper = "";
         }
         else {firstNumber = parseInt(screen.value);}
         oper = button.textContent;
-        console.log(oper);
+        output.textContent = firstNumber + oper;
         enterSecondNumber = true;
     })
 })
