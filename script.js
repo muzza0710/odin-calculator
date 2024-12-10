@@ -37,7 +37,7 @@ clearButton.addEventListener("click", () => {
 })
 
 equalsButton.addEventListener("click", () => {
-    if (firstNumber && oper){
+    if (firstNumber){
         firstNumber = calculate(parseInt(firstNumber), parseInt(screen.value), oper);
         screen.value = firstNumber;
         oper = "";
@@ -57,12 +57,12 @@ digitButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        if (oper){
+        if (oper && screen.value){
             firstNumber = calculate(parseInt(firstNumber), parseInt(screen.value), oper)
             screen.value = "";
             oper = "";
         }
-        else {firstNumber = parseInt(screen.value);}
+        else if (screen.value){firstNumber = parseInt(screen.value);}
         oper = button.textContent;
         output.textContent = firstNumber + oper;
         enterSecondNumber = true;
