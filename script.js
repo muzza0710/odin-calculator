@@ -60,15 +60,15 @@ equalsButton.addEventListener("click", () => {
 })
 
 periodButton.addEventListener("click", () => {
-    if (!screen.value.includes(".") || !screen.value || !enterFirstNumber){
-        screen.value += ".";
-    } else if (enterSecondNumber || enterFirstNumber) {
+    if (enterSecondNumber || enterFirstNumber) {
         screen.value = "";
         enterSecondNumber = false;
         enterFirstNumber = false;
         screen.value += "0.";
-    }
-
+    } else if (!screen.value.includes(".")){
+        screen.value += ".";
+    } 
+    
 })
 
 digitButtons.forEach((button) => {
