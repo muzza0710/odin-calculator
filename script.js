@@ -5,7 +5,7 @@ const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
 const posNegButton = document.querySelector(".pos-neg");
 const periodButton = document.querySelector(".period");
-const backspaceButton = document.querySelector(".backpace");
+const backspaceButton = document.querySelector(".backspace");
 
 const screen = document.getElementById("screen");
 const output = document.querySelector(".output");
@@ -35,6 +35,12 @@ function calculate(a, b, operator ) {
     
     }
 }
+
+backspaceButton.addEventListener("click", () => {
+    if (!secondNumber && screen.value){
+        screen.value = screen.value.slice(0, -1);
+    }
+})
 
 clearButton.addEventListener("click", () => {
     firstNumber = "";

@@ -10,13 +10,11 @@ body {
 
 button {
     border-radius: 5px;
-    width: 100px;
-    height: 100px;
+    width: 25rem;
 }
 
 input {
     flex: 1 1 auto;
-    height: 50px;
     background-color: rgb(202, 153, 46);
     text-align: end;
 }
@@ -35,7 +33,8 @@ input {
 }
 
 .backspace {
-    flex: 1 1 auto;
+    width: 54rem;
+
 }
 
 .container {
@@ -44,7 +43,7 @@ input {
     flex: 0 1 auto;
     width: 450px;
     height: 600px;
-    max-width: 100vw;
+    max-width: 95vw;
     max-height: 100vh;
 
     border: 1px solid black;
