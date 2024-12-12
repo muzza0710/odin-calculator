@@ -13,6 +13,7 @@ const output = document.querySelector(".output");
 let firstNumber;
 let secondNumber;
 let oper = "";
+let outputString = "";
 let enterFirstNumber = true;
 let enterSecondNumber = false;
 
@@ -52,7 +53,6 @@ equalsButton.addEventListener("click", () => {
         firstNumber = calculate(parseFloat(firstNumber), secondNumber, oper);
         screen.value = firstNumber;
         oper = "";
-        // firstNumber = "";
         secondNumber = "";
         enterSecondNumber = false;
         enterFirstNumber = true;
@@ -69,6 +69,21 @@ periodButton.addEventListener("click", () => {
         screen.value += ".";
     } 
     
+})
+
+posNegButton.addEventListener("click", () => {
+    let num = parseFloat(screen.value);
+    if (num) {
+    num *= -1;
+    screen.value = num;
+    } else {
+        screen.value = "-";
+        if (enterFirstNumber){enterFirstNumber = false}
+        if (enterSecondNumber){enterSecondNumber = false}
+
+    }
+
+
 })
 
 digitButtons.forEach((button) => {
@@ -96,3 +111,4 @@ operatorButtons.forEach((button) => {
         enterSecondNumber = true;
     })
 })
+
